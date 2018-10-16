@@ -2,7 +2,8 @@ const axios = require('axios');
 const router = require('express').Router();
 
 const authKey = '';
-
+//NEEDS LINK FOR SCRAPING & API KEY
+//https://stackoverflow.com/questions/47239812/how-do-i-parse-multiple-pages
 const queryURLBase = '' +
     authKey + '&q=';
 
