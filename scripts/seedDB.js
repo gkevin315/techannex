@@ -1,0 +1,35 @@
+const mongoose = requiree('mongoose');
+const db = require('../models');
+mongoose.Promise = global.Promise;
+
+mongoose.connect(
+    process.env.MONGODB_URI || "mongod://localhost/nytreact",
+    {
+        useMongoClient: true
+    }
+);
+
+const articleSeed = [
+    {
+        title: "one",
+        url: "url1",
+        date: new Date(Date.now())
+    },
+    {
+        title: "two",
+        url: "url2",
+        date: new Date(Date.now())
+    }
+];
+
+dbArticle
+    .remove({})
+    .then(() => db.Article.collection.insertMany(articleSeed))
+    .then(data => {
+        console.log(data.insertedIds.length + " records inserted!");
+        process.exit(0);
+    })
+    .catch(erro => {
+        console.log(error);
+        process.exit(1);
+    });
