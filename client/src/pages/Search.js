@@ -41,7 +41,7 @@ class Search extends Component {
       <div>
         <Container>
           <Jumbotron>
-            <h1 className="text-center"><strong><i className="fa fa-newspaper-o"></i> New York Times Search</strong></h1>
+            <h1 className="text-center"><strong><i className="fa fa-newspaper-o"></i> Tech Annex | Landing page</strong></h1>
           </Jumbotron>
           <Row>
             <Col size="md-12">

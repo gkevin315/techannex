@@ -17,10 +17,14 @@ const PORT = process.env.PORT || 4000;
 // app.use(routes);
 
 //Middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(bodyParser.text());
+app.use(routes);
+//Serve statis assets
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static('/client/build'));
+}
 
 // Passport
 //keeps user logged in
@@ -31,18 +35,11 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static(__dirname + '/client/build'));
-}
-
-mongoose.Promise = global.Promise;
-
 mongoose.connect(
-	process.env.MONGODB_URI || 'mongodb://localhost/techannex'
+	process.env.MONGODB_URI ||
+	'mongodb://localhost/techannex'
 );
 
-app.listen(PORT, function () {
-	console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
-
-module.exports = app;
+app.listen(PORT, () =>
+	console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
+);
