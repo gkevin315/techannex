@@ -4,7 +4,20 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+<<<<<<< HEAD
     "mongoose": "^5.3.4"
+=======
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.3.3",
+    "passport": "^0.4.0",
+    "path": "^0.12.7",
+    "react-router-dom": "^4.3.1",
+    "router": "^1.3.3"
+>>>>>>> 976f8732db4136ea298622dfbf4c170c12efdccd
   },
   "devDependencies": {},
   "scripts": {
