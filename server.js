@@ -6,7 +6,7 @@ const routes = require('./routes');
 var passport = require('passport');
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5500;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
